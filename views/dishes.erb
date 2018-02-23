@@ -1,0 +1,20 @@
+<h1 class="center">Food Dishes</h1>
+<div class="row">
+  <% @dishes.each do |food| %>
+    <div >
+      <div>
+        <div >
+          <span ><%= dish.title %></span>
+          <p><%= dish.description %></p>
+        </div>
+        <div>
+          <a class="btn" href="/dishes/<%= dish.id %>/edit">Edit</a>
+          <form action="/dishes/ <% dish.id %>"method="POST">
+          <input type="hidden" name="_method" value="DELETE" />
+            <button class="btn red">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

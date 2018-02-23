@@ -1,0 +1,15 @@
+<h1>Edit <%= @dish.title %></h1>
+<form method ="POST" action="/dishes/ <%= @dish.id %>">
+  <input type ="hidden" name="_method" value="PUT">
+  <div class="input-field">
+    <input id="title" required name="title" value="<%= @dish.title %>"/>
+    <label class="active" for="title">Title</label>
+  </div>
+  <div class="input-field">
+    <textarea id="desc" required name="description">
+      <%= @dish.description %>
+    </textarea>
+    <label for="desc" class="active">Food Description</label>
+  </div>
+ <button type="submit">Save</button>
+</form>
