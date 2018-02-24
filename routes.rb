@@ -3,25 +3,38 @@ class Dishes < Sinatra::Base
     erb :home 
   end
   
-  post "/dishes" do 
-    Food.create(title: params[:title], description: params[:description])
-    redirect "/"
+get "/dishes/new" do 
+  erb :new 
+end 
+
+  get "/dishes/:id/edit" do 
+  @dish = Dish.find(params[:id]) 
+    erb :edit 
   end 
 
-  post "/dishes" do 
-    @dishes = Food.all
+
+  get "/dishes" do 
+    @dishes = Dish.all
     erb :dishes 
   end
 
-   get "/dishes/:id/edit" do 
-    @dish = Dish.find(params[:id]) 
-    erb :edit 
-  end 
+  get "/.dishes" do 
+    @dishes = Dish.all
+    erb :dishes
+    end 
   put "/dishes/:id" do
-    app = Dish.find(params[:id])
-    app.update(title: params[:title], description: params[:description])
+    dish = Dish.find(params[:id])
+    dish.update(
+      title: params[:title], description: params[:description]
+      )
   redirect "/dishes"
   end
+  
+  post "/dishes" do 
+    Dish.create(title: params[:title], description: params[:description])
+    redirect "/"
+  end 
+
 
   delete "/dishes/:id" do
   Dish.find(params[:id]).destroy

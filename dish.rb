@@ -1,13 +1,13 @@
 ENV['RACK_ENV'] ||= 'development'
-require 'sinatra/base'
 require 'bundler'
 Bundler.require :default, ENV['RACK_ENV'].to_sym
-require_relative 'routes'
+require 'sinatra/base'
 require 'rubygems'
-require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra'
 require './environments'
-require './models/dish';
+require './models/dish'
+require_relative 'routes'
 
 class Dishes < Sinatra::Base 
   set :root, File.dirname(__FILE__)
