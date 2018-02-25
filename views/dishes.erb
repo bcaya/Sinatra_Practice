@@ -1,18 +1,15 @@
-<h1>Food Dishes</h1>
+<h1 class = "ui center aligned segment">Food Dishes</h1>
 <div>
   <% @dishes.each do |dish| %>
-    <div >
-          <span ><%= dish.title %></span>
-          <p><%= dish.description %></p>
-        </div>
-        <div>
-          <a class="ui button" href="/dishes/<%= dish.id %>/edit">Edit</a>
+    <div  class="ui center aligned segment">
+          <p class="ui center aligned segment" ><%= dish.title %></p>
+          <p class="ui center aligned segment"> Dish Description:  <%= dish.description %></p>
+          <a class="ui olive button" href="/dishes/<%= dish.id %>/edit">Edit</a>
           <form action="/dishes/ <% dish.id %>"method="POST">
           <input type="hidden" name="_method" value="DELETE" />
-            <button class="ui button">Delete</button>
+            <button class="ui red button">Delete</button>
           </form>
-        </div>
       </div>
-    </div>
+      </div>
   <% end %>
 </div>

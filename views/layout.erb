@@ -1,11 +1,12 @@
 <html>
   <head>
     <title>Sinatra's Flavors of the World</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+    <link href ="/stylesheets/styles.css" rel="stylesheet" type="text/css" />
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body>
+  <body class="background">
     <%= erb :navbar %>
     <div class="ui container">
       <%= yield %>

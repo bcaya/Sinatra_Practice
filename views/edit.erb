@@ -1,4 +1,4 @@
-<h1>Edit <%= @dish.title %></h1>
+<h1 class="ui center aligned segment">Edit <%= @dish.title %></h1>
 <form method ="POST" action="/dishes/ <%= @dish.id %>">
   <input type ="hidden" name="_method" value="PUT">
   <div class="input-field">

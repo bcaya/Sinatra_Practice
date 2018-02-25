@@ -12,6 +12,7 @@ require_relative 'routes'
 class Dishes < Sinatra::Base 
   set :root, File.dirname(__FILE__)
   enable :sessions
+  set :public_folder, File.expand_path('../public', __FILE__)
   set :views, Proc.new { File.join(root, "views")}
     register Sinatra::ActiveRecordExtension
   use Rack::MethodOverride
