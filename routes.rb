@@ -35,7 +35,6 @@ end
     redirect "/"
   end 
 
-
   delete "/dishes/:id" do
   Dish.find(params[:id]).destroy
   redirect "/dishes"
