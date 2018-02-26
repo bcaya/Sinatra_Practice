@@ -1,7 +1,9 @@
 .background{
   background-color: #ffcdd2;
 }
-
+.imgs{
+  border-radius: 50px;
+}
 .headers{
   display:flex;
   justify-content: center;
